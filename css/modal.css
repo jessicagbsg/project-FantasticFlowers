@@ -1,0 +1,94 @@
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.active {
+  display: flex;
+}
+
+.modal {
+  min-width: 20rem;
+  background-color: white;
+  padding: 2rem;
+  border: 0.5rem solid #ac7d88;
+  box-shadow: 0 0 0 0.5rem white;
+  position: relative;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.active .modal {
+  animation: modal 0.3s forwards;
+}
+
+.close {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.25rem solid white;
+  border-radius: 50%;
+  background-color: #452d3a;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
+  font-family: "Ibm Plex Mono", monospace;
+  color: white;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: #deb6ab;
+  color: #222;
+}
+
+.modal label {
+  font-family: "Ibm Plex Mono", monospace;
+  font-weight: bold;
+  display: block;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.modal input {
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  box-sizing: border-box;
+  font-family: "Ibm Plex Mono", monospace;
+}
+
+.modal button[type="submit"] {
+  display: block;
+  background-color: #452d3a;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.7rem 2rem;
+  margin-top: 1rem;
+  font-family: "Ibm Plex Mono", monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.modal button[type="submit"]:hover {
+  background-color: #deb6ab;
+  color: #222;
+}

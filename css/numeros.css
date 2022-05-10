@@ -1,0 +1,40 @@
+.numbers-grid {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.numbers-grid h3 {
+  font-family: "Playfair display SC";
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.numbers-grid span {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #85586f;
+}
+
+[data-week]::after {
+  display: inline-block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: #85586f;
+  margin-left: 4px;
+}
+
+[data-week].open::after {
+  background-color: #c6d57e;
+}
+
+@media (max-width: 700px) {
+  .numbers-grid {
+    grid-column: 1;
+  }
+}
