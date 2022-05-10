@@ -1,6 +1,6 @@
-import initNumbers from "./numbers.js";
+import AnimatedNumbers from "./animatedNumbers.js";
 
-export default function initFetchNumbers() {
+export default function FetchNumbers() {
   function createFlower(flower) {
     const div = document.createElement("div");
     div.classList.add("flowers-numbers");
@@ -18,7 +18,12 @@ export default function initFetchNumbers() {
         const divFlower = createFlower(flower);
         gridNumbers.appendChild(divFlower);
       });
-      initNumbers();
+      const numbers = new AnimatedNumbers(
+        "[data-numbers]",
+        ".numbers",
+        "active"
+      );
+      numbers.init();
     } catch (error) {
       console.log(error);
     }

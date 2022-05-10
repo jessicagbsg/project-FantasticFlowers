@@ -32,6 +32,8 @@ export default class initTooltip {
     document.body.appendChild(tooltipBox);
   }
 
+  // creates tooltip and adds events of mousemove and mouse leave to target
+
   onMouseOver({ currentTarget }) {
     // creates tooltip Box and sets it in a property
     this.createTooltipBox(currentTarget);
@@ -40,6 +42,7 @@ export default class initTooltip {
     currentTarget.addEventListener("mouseleave", this.onMouseLeave);
   }
 
+  // add mouseover events to tooltips
   addTooltipsEvent() {
     this.tooltips.forEach((item) => {
       item.addEventListener("mouseover", this.onMouseOver);
