@@ -4,11 +4,11 @@ import TabNav from "./modules/tabNav.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import fetchNumbers from "./modules/fetchNumbers.js";
+import fetchBitcoin from "./modules/fetchBitcoin.js";
+import ScrollAnimation from "./modules/scrollAnimation.js";
 import initDropdownMenu from "./modules/dropdown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initOperation from "./modules/operation.js";
-import fetchBitcoin from "./modules/fetchBitcoin.js";
-import initScrollAnimation from "./modules/scrollAnimation.js";
 
 const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"]');
 smoothScroll.init();
@@ -34,9 +34,11 @@ tooltip.init();
 
 fetchNumbers("../../flowersAPI.json", ".numbers-grid");
 
-initScrollAnimation();
+fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
+
+const scrollAnimation = new ScrollAnimation('[data-anime="scroll"]');
+scrollAnimation.init();
+
 initDropdownMenu();
 initMenuMobile();
 initOperation();
-
-fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
