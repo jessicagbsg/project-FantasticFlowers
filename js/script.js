@@ -8,7 +8,7 @@ import fetchBitcoin from "./modules/fetchBitcoin.js";
 import ScrollAnimation from "./modules/scrollAnimation.js";
 import DropdownMenu from "./modules/dropdownMenu.js";
 import MenuMobile from "./modules/menuMobile.js";
-import initOperation from "./modules/operation.js";
+import Operation from "./modules/operation.js";
 
 const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"]');
 smoothScroll.init();
@@ -32,10 +32,6 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
-fetchNumbers("../../flowersAPI.json", ".numbers-grid");
-
-fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
-
 const scrollAnimation = new ScrollAnimation('[data-anime="scroll"]');
 scrollAnimation.init();
 
@@ -45,4 +41,9 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-initOperation();
+const operation = new Operation("[data-week]", "open");
+operation.init();
+
+fetchNumbers("../../flowersAPI.json", ".numbers-grid");
+
+fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
