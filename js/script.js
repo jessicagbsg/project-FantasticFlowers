@@ -3,10 +3,10 @@ import Accordion from "./modules/accordion.js";
 import TabNav from "./modules/tabNav.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
+import fetchNumbers from "./modules/fetchNumbers.js";
 import initDropdownMenu from "./modules/dropdown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initOperation from "./modules/operation.js";
-import initFetchNumbers from "./modules/fetchNumbers.js";
 import initFetchBitcoin from "./modules/fetchBitcoin.js";
 import initScrollAnimation from "./modules/scrollAnimation.js";
 
@@ -32,9 +32,10 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
+fetchNumbers("../../flowersAPI.json", ".numbers-grid");
+
 initScrollAnimation();
 initDropdownMenu();
 initMenuMobile();
 initOperation();
-initFetchNumbers();
 initFetchBitcoin();
