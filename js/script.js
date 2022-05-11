@@ -7,7 +7,7 @@ import fetchNumbers from "./modules/fetchNumbers.js";
 import initDropdownMenu from "./modules/dropdown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initOperation from "./modules/operation.js";
-import initFetchBitcoin from "./modules/fetchBitcoin.js";
+import fetchBitcoin from "./modules/fetchBitcoin.js";
 import initScrollAnimation from "./modules/scrollAnimation.js";
 
 const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"]');
@@ -38,4 +38,5 @@ initScrollAnimation();
 initDropdownMenu();
 initMenuMobile();
 initOperation();
-initFetchBitcoin();
+
+fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
