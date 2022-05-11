@@ -1,6 +1,7 @@
 import AnimatedNumbers from "./animatedNumbers.js";
 
-export default function FetchNumbers() {
+export default function fetchNumbers(url, target) {
+  // creates div wtih total
   function createFlower(flower) {
     const div = document.createElement("div");
     div.classList.add("flowers-numbers");
@@ -8,26 +9,31 @@ export default function FetchNumbers() {
     return div;
   }
 
-  async function fetchFlowers(url) {
+  const gridNumbers = document.querySelector(target);
+  function fillFlowers(flower) {
+    const divFlower = createFlower(flower);
+    gridNumbers.appendChild(divFlower);
+  }
+
+  // animates numbers
+  function animatedFlowersNumbers() {
+    const numbers = new AnimatedNumbers("[data-numbers]", ".numbers", "active");
+    numbers.init();
+  }
+
+  // pulls from JSON and creates each "flower" using createFlowers
+  async function fetchFlowers() {
     try {
+      // awaits for fetch response and transforms into JSON
       const flowersResponse = await fetch(url);
       const flowersJSON = await flowersResponse.json();
-      const gridNumbers = document.querySelector(".numbers-grid");
 
-      flowersJSON.forEach((flower) => {
-        const divFlower = createFlower(flower);
-        gridNumbers.appendChild(divFlower);
-      });
-      const numbers = new AnimatedNumbers(
-        "[data-numbers]",
-        ".numbers",
-        "active"
-      );
-      numbers.init();
+      // after transforming into JSON activates functions to fill and animate numbers
+      flowersJSON.forEach((flower) => fillFlowers(flower));
+      animatedFlowersNumbers();
     } catch (error) {
       console.log(error);
     }
   }
-
-  fetchFlowers("./flowersAPI.json");
+  return fetchFlowers();
 }
