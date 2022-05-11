@@ -6,7 +6,7 @@ import Tooltip from "./modules/tooltip.js";
 import fetchNumbers from "./modules/fetchNumbers.js";
 import fetchBitcoin from "./modules/fetchBitcoin.js";
 import ScrollAnimation from "./modules/scrollAnimation.js";
-import initDropdownMenu from "./modules/dropdown.js";
+import DropdownMenu from "./modules/dropdownMenu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initOperation from "./modules/operation.js";
 
@@ -39,6 +39,9 @@ fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
 const scrollAnimation = new ScrollAnimation('[data-anime="scroll"]');
 scrollAnimation.init();
 
-initDropdownMenu();
+const dropdownMenu = new DropdownMenu("[data-dropdown]");
+dropdownMenu.init();
+
+DropdownMenu();
 initMenuMobile();
 initOperation();
