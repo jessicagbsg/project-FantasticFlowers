@@ -44,6 +44,6 @@ menuMobile.init();
 const operation = new Operation("[data-week]", "open");
 operation.init();
 
-fetchNumbers("./flowersAPI.json", ".numbers-grid");
+fetchNumbers("././flowersAPI.json", ".numbers-grid");
 
 fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
