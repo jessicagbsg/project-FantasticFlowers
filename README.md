@@ -1,4 +1,4 @@
-# project-FantasticFlowers
+# Project Flowers
 Personal Project created using HTML, CSS and Javascript
 
 
