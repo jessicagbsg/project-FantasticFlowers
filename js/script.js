@@ -13,7 +13,7 @@ import Operation from "./modules/operation.js";
 const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"]');
 smoothScroll.init();
 
-const accordion = new Accordion('[data-anime="accordion"] dt');
+const accordion = new Accordion('[data-animation="accordion"] dt');
 accordion.init();
 
 const tabNav = new TabNav(
@@ -32,7 +32,7 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
-const scrollAnimation = new ScrollAnimation('[data-anime="scroll"]');
+const scrollAnimation = new ScrollAnimation('[data-animation="scroll"]');
 scrollAnimation.init();
 
 const dropdownMenu = new DropdownMenu("[data-dropdown]");
